@@ -38,3 +38,13 @@ Get-Content .\install.ps1 | Select-Object -Index 1182
 
 Test 5
 powershell -ExecutionPolicy Unrestricted -File .\install.ps1
+
+Test 6
+
+@"
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+</packages>
+"@ | Out-File -FilePath "C:\Users\HienLinh\Desktop\vm-packages.xml" -Encoding utf8
+
+Test-Path "C:\Users\HienLinh\Desktop\vm-packages.xml"
