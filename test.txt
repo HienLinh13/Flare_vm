@@ -6,9 +6,8 @@ Tets 1
 "@ | Out-File -FilePath "C:\vm-packages.xml" -Encoding utf8
 
 Test 2
-
 cd $env:USERPROFILE\Desktop
-powershell -ExecutionPolicy Bypass .\install.ps1
+powershell -ExecutionPolicy Unrestricted -File .\install.ps1
 
 Test 3
 
