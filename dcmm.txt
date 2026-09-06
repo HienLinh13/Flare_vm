@@ -55,3 +55,10 @@ Get-Content .\install.ps1 | Select-Object -Index 1785
 Get-Content .\install.ps1 | Select-Object -Index 1785
 
 .\install.ps1 -noGui -noChecks
+
+
+# Tạo file packages.xml đúng chỗ
+Copy-Item "C:\Users\HienLinh\Desktop\config.xml" "C:\ProgramData\_VM\packages.xml" -Force
+
+# Chạy lại
+.\install.ps1 -noGui -noChecks
