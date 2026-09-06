@@ -48,3 +48,10 @@ Invoke-WebRequest -Uri "https://www.myget.org/F/vm-packages/api/v2/Packages?`$fi
 .\install.ps1 -noGui -noChecks
 
 Get-Content .\install.ps1 | Select-Object -Index 1785
+
+
+(Get-Content .\install.ps1 -Raw) -replace [regex]::Escape('Import-Module "C:\Users\HienLinh\Desktop\vm.common\vm.common.psm1" -Force -DisableNameChecking'), 'Import-Module "C:\ProgramData\_VM\vm.common\vm.common.psm1" -Force -DisableNameChecking' | Set-Content .\install.ps1 -Encoding utf8
+
+Get-Content .\install.ps1 | Select-Object -Index 1785
+
+.\install.ps1 -noGui -noChecks
