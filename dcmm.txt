@@ -62,3 +62,11 @@ Copy-Item "C:\Users\HienLinh\Desktop\config.xml" "C:\ProgramData\_VM\packages.xm
 
 # Chạy lại
 .\install.ps1 -noGui -noChecks
+
+
+
+
+choco install binaryninja.vm -y --force
+
+
+.\install.ps1 -noGui -noChecks
