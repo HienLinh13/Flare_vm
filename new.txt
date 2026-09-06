@@ -28,3 +28,6 @@ test 5
 
 # Set biến + chạy install trong cùng 1 lệnh
 $env:VM_COMMON_DIR = "C:\Users\HienLinh\Desktop"; .\install.ps1
+
+
+Get-Content .\install.ps1 | Select-Object -Index 1189,1190,1191,1192
