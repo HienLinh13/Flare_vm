@@ -25,3 +25,15 @@ Select-String -Path ".\install.ps1" -Pattern "vm-packages"
 Test 5
 
 echo $Env:VM_COMMON_DIR
+
+Tets 6
+
+$env:VM_COMMON_DIR = "C:\Users\HienLinh\Desktop"
+
+Test 7 
+echo $Env:VM_COMMON_DIR
+Test-Path "$Env:VM_COMMON_DIR\vm-packages.xml"
+
+Test 8
+
+powershell -ExecutionPolicy Unrestricted -File .\install.ps1
