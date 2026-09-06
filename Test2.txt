@@ -37,3 +37,21 @@ Test-Path "$Env:VM_COMMON_DIR\vm-packages.xml"
 Test 8
 
 powershell -ExecutionPolicy Unrestricted -File .\install.ps1
+
+Test 9
+
+$env:VM_COMMON_DIR = "C:\Users\HienLinh\Desktop"
+
+@"
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+</packages>
+"@ | Out-File -FilePath "$env:VM_COMMON_DIR\vm-packages.xml" -Encoding utf8
+
+Test 10 
+
+Test-Path "$env:VM_COMMON_DIR\vm-packages.xml"
+
+Test 11
+powershell -ExecutionPolicy Unrestricted -File .\install.ps1
+
