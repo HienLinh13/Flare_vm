@@ -35,3 +35,6 @@ $content = @'
 
 Invoke-WebRequest -Uri "https://www.myget.org/F/vm-packages/api/v2/Packages?`$filter=IsLatestVersion%20eq%20true" -OutFile "C:\Users\HienLinh\Desktop\vm-packages.xml"
 .\install.ps1
+
+refreshenv
+.\install.ps1 -noGui -noChecks
