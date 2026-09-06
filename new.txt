@@ -46,3 +46,13 @@ Test-Path 'C:\Users\HienLinh\Desktop\vm-packages.xml'
 # Verify
 Test-Path 'C:\Users\HienLinh\Desktop\vm-packages.xml'
 Get-Item 'C:\Users\HienLinh\Desktop\vm-packages.xml' | Select-Object Length
+
+
+
+(Get-Content .\install.ps1 -Raw) -replace 'Remove-Item \$vmPackagesFile', '# Remove-Item $vmPackagesFile' | Set-Content .\install.ps1 -Encoding utf8
+
+Select-String -Path .\install.ps1 -Pattern "Remove-Item.*vmPackagesFile"
+
+(New-Object net.webclient).DownloadFile("https://www.myget.org/F/vm-packages/api/v2/Packages?`$filter=IsLatestVersion%20eq%20true","C:\Users\HienLinh\Desktop\vm-packages.xml")
+
+.\install.ps1
