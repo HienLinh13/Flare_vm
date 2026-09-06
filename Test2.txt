@@ -15,3 +15,8 @@ Test 3
 
 cd $env:USERPROFILE\Desktop
 powershell -ExecutionPolicy Unrestricted -File .\install.ps1 -vmPackagesFile "C:\vm-packages.xml"
+
+
+Test 4
+
+Select-String -Path ".\install.ps1" -Pattern "vm-packages"
