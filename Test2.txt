@@ -20,3 +20,8 @@ powershell -ExecutionPolicy Unrestricted -File .\install.ps1 -vmPackagesFile "C:
 Test 4
 
 Select-String -Path ".\install.ps1" -Pattern "vm-packages"
+
+
+Test 5
+
+echo $Env:VM_COMMON_DIR
