@@ -1,0 +1,15 @@
+# Set permanent, toàn hệ thống
+[System.Environment]::SetEnvironmentVariable("VM_COMMON_DIR", "C:\Users\HienLinh\Desktop", "Machine")
+
+# Tạo file xml ở Desktop
+@"
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+</packages>
+"@ | Out-File -FilePath "C:\Users\HienLinh\Desktop\vm-packages.xml" -Encoding utf8
+
+# Verify
+Test-Path "C:\Users\HienLinh\Desktop\vm-packages.xml"
+
+# Chạy install
+powershell -ExecutionPolicy Unrestricted -File .\install.ps1
