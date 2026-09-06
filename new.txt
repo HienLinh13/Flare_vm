@@ -62,3 +62,7 @@ Invoke-WebRequest -Uri "https://www.myget.org/F/vm-packages/api/v2/Packages?`$fi
 
 Test-Path "C:\Users\HienLinh\Desktop\vm-packages.xml"
 Get-Item "C:\Users\HienLinh\Desktop\vm-packages.xml" | Select-Object Length
+
+
+
+Select-String -Path .\install.ps1 -Pattern "Remove-Item|Delete.*xml|xml.*Delete" | Select-Object LineNumber, Line
