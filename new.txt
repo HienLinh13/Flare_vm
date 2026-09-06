@@ -31,3 +31,4 @@ $env:VM_COMMON_DIR = "C:\Users\HienLinh\Desktop"; .\install.ps1
 
 
 Get-Content .\install.ps1 | Select-Object -Index 1189,1190,1191,1192
+Get-Content .\install.ps1 | Select-Object -Index 1181,1182,1183,1184,1185
