@@ -13,3 +13,12 @@ Test-Path "C:\Users\HienLinh\Desktop\vm-packages.xml"
 
 # Chạy install
 powershell -ExecutionPolicy Unrestricted -File .\install.ps1
+
+
+Tets 
+
+(Get-Content .\install.ps1) -replace '\$\{Env:VM_COMMON_DIR\}\\vm-packages\.xml', 'C:\\Users\\HienLinh\\Desktop\\vm-packages.xml' | Set-Content .\install.ps1
+
+Test 1
+
+powershell -ExecutionPolicy Unrestricted -File .\install.ps1
