@@ -26,3 +26,15 @@ powershell -ExecutionPolicy Unrestricted -File .\install.ps1
 Tets 2
 
 Get-Content .\install.ps1 | Select-Object -Index 1182
+
+
+Test 3
+
+(Get-Content .\install.ps1) -replace 'C:\\\\HienLinh\\\\Desktop\\\\vm-packages\.xml', 'C:\\Users\\HienLinh\\Desktop\\vm-packages.xml' | Set-Content .\install.ps1
+
+Test 4
+
+Get-Content .\install.ps1 | Select-Object -Index 1182
+
+Test 5
+powershell -ExecutionPolicy Unrestricted -File .\install.ps1
