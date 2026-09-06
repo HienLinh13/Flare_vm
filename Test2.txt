@@ -55,3 +55,11 @@ Test-Path "$env:VM_COMMON_DIR\vm-packages.xml"
 Test 11
 powershell -ExecutionPolicy Unrestricted -File .\install.ps1
 
+
+Test 12
+
+$env:VM_COMMON_DIR = "C:\Users\HienLinh\Desktop"
+
+cd $env:USERPROFILE\Desktop
+
+powershell -ExecutionPolicy Unrestricted -File .\install.ps1
