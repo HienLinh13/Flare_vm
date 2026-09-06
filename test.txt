@@ -1,0 +1,11 @@
+Tets 1
+@"
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+</packages>
+"@ | Out-File -FilePath "C:\vm-packages.xml" -Encoding utf8
+
+Test 2
+
+cd $env:USERPROFILE\Desktop
+powershell -ExecutionPolicy Bypass .\install.ps1
