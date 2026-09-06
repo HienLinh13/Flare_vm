@@ -38,3 +38,11 @@ Get-Content .\install.ps1 | Select-Object -Index 1182
 
 (New-Object net.webclient).DownloadFile('https://www.myget.org/F/vm-packages/api/v2/Packages?$filter=IsLatestVersion%20eq%20true', 'C:\Users\HienLinh\Desktop\vm-packages.xml')
 Test-Path 'C:\Users\HienLinh\Desktop\vm-packages.xml'
+
+
+# Download file trước
+(New-Object net.webclient).DownloadFile('https://www.myget.org/F/vm-packages/api/v2/Packages?$filter=IsLatestVersion%20eq%20true', 'C:\Users\HienLinh\Desktop\vm-packages.xml')
+
+# Verify
+Test-Path 'C:\Users\HienLinh\Desktop\vm-packages.xml'
+Get-Item 'C:\Users\HienLinh\Desktop\vm-packages.xml' | Select-Object Length
