@@ -13,3 +13,15 @@ powershell -ExecutionPolicy Bypass .\install.ps1
 Test 3
 
 Set-ExecutionPolicy Unrestricted -Force
+
+
+
+Test 4
+
+Set-ExecutionPolicy Unrestricted -Scope LocalMachine -Force
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+
+Test 5 
+
+Get-ExecutionPolicy -List
+
