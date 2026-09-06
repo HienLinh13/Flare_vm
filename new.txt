@@ -56,3 +56,9 @@ Select-String -Path .\install.ps1 -Pattern "Remove-Item.*vmPackagesFile"
 (New-Object net.webclient).DownloadFile("https://www.myget.org/F/vm-packages/api/v2/Packages?`$filter=IsLatestVersion%20eq%20true","C:\Users\HienLinh\Desktop\vm-packages.xml")
 
 .\install.ps1
+
+
+Invoke-WebRequest -Uri "https://www.myget.org/F/vm-packages/api/v2/Packages?`$filter=IsLatestVersion%20eq%20true" -OutFile "C:\Users\HienLinh\Desktop\vm-packages.xml"
+
+Test-Path "C:\Users\HienLinh\Desktop\vm-packages.xml"
+Get-Item "C:\Users\HienLinh\Desktop\vm-packages.xml" | Select-Object Length
