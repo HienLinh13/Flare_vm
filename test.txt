@@ -9,3 +9,7 @@ Test 2
 
 cd $env:USERPROFILE\Desktop
 powershell -ExecutionPolicy Bypass .\install.ps1
+
+Test 3
+
+Set-ExecutionPolicy Unrestricted -Force
