@@ -66,3 +66,6 @@ Get-Item "C:\Users\HienLinh\Desktop\vm-packages.xml" | Select-Object Length
 
 
 Select-String -Path .\install.ps1 -Pattern "Remove-Item|Delete.*xml|xml.*Delete" | Select-Object LineNumber, Line
+
+
+Get-Content .\install.ps1 | Out-File "C:\Users\HienLinh\Desktop\script_content.txt" -Encoding utf8
