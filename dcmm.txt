@@ -1,0 +1,6 @@
+(Get-Content .\install.ps1 -Raw) -replace '\$\{Env:VM_COMMON_DIR\}\\vm-packages\.xml', "$env:USERPROFILE\\Desktop\\vm-packages.xml" | Set-Content .\install.ps1 -Encoding utf8
+
+Get-Content .\install.ps1 | Select-Object -Index 1182
+
+Invoke-WebRequest -Uri "https://www.myget.org/F/vm-packages/api/v2/Packages?`$filter=IsLatestVersion%20eq%20true" -OutFile "C:\Users\HienLinh\Desktop\vm-packages.xml"
+.\install.ps1
