@@ -3,4 +3,35 @@
 Get-Content .\install.ps1 | Select-Object -Index 1182
 
 Invoke-WebRequest -Uri "https://www.myget.org/F/vm-packages/api/v2/Packages?`$filter=IsLatestVersion%20eq%20true" -OutFile "C:\Users\HienLinh\Desktop\vm-packages.xml"
+
+
+
+.\install.ps1
+
+
+
+
+
+
+
+$content = @'
+   $vmPackagesUrl = "https://www.myget.org/F/vm-packages/api/v2/Packages?$filter=IsLatestVersion%20eq%20true"
+   $vmPackagesFile = "C:\Users\HienLinh\Desktop\vm-packages.xml"
+   $packagesByCategory=@{}
+   do {
+	  # Download the XML from MyGet API
+	  if (-not (Test-Path $vmPackagesFile)) { Save-FileFromUrl -fileSource $vmPackagesUrl -fileDestination $vmPackagesFile }
+'@
+
+(Get-Content .\install.ps1 -Raw) -replace [regex]::Escape('   $vmPackagesUrl = "https://www.myget.org/F/vm-packages/api/v2/Packages?$filter=IsLatestVersion%20eq%20true"
+   $vmPackagesFile = "${Env:VM_COMMON_DIR}\vm-packages.xml"
+   $packagesByCategory=@{}
+   do {
+	  # Download the XML from MyGet API
+	  Save-FileFromUrl -fileSource $vmPackagesUrl -fileDestination $vmPackagesFile --exitOnError'), $content | Set-Content .\install.ps1 -Encoding utf8
+
+
+
+
+Invoke-WebRequest -Uri "https://www.myget.org/F/vm-packages/api/v2/Packages?`$filter=IsLatestVersion%20eq%20true" -OutFile "C:\Users\HienLinh\Desktop\vm-packages.xml"
 .\install.ps1
