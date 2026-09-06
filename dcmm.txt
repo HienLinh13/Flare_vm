@@ -47,4 +47,4 @@ Invoke-WebRequest -Uri "https://www.myget.org/F/vm-packages/api/v2/Packages?`$fi
 
 .\install.ps1 -noGui -noChecks
 
-
+Get-Content .\install.ps1 | Select-Object -Index 1785
